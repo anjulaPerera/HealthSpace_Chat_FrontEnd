@@ -11,23 +11,15 @@ class CreateGroup extends StatefulWidget {
 }
 
 class _CreateGroupState extends State<CreateGroup> {
+  List<ChatModel> contacts = [
+    ChatModel(name: 'Anjula', about: 'Pissottek'),
+    ChatModel(name: 'Perera', about: 'Gammac'),
+    ChatModel(name: 'Junuju', about: 'elama ela'),
+  ];
+
+  List<ChatModel> groups = [];
   @override
   Widget build(BuildContext context) {
-    List<ChatModel> contacts = [
-      ChatModel(
-        name: 'Anjula',
-        about: 'Pissottek',
-      ),
-      ChatModel(
-        name: 'Perera',
-        about: 'Gammac',
-      ),
-      ChatModel(
-        name: 'Junuju',
-        about: 'elama ela',
-      ),
-    ];
-
     return Scaffold(
       appBar: AppBar(
         title: Column(
@@ -62,7 +54,22 @@ class _CreateGroupState extends State<CreateGroup> {
       body: ListView.builder(
         itemCount: contacts.length,
         itemBuilder: (context, index) {
-          return ContactCard(contact: contacts[index]);
+          return InkWell(
+            onTap: () {
+              if (contacts[index].select == false) {
+                setState(() {
+                  contacts[index].select = true;
+                  groups.add(contacts[index]);
+                });
+              } else {
+                setState(() {
+                  contacts[index].select = false;
+                  groups.remove(contacts[index]);
+                });
+              }
+            },
+            child: ContactCard(contact: contacts[index]),
+          );
         },
       ),
     );

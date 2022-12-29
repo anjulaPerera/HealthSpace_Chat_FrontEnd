@@ -5,6 +5,7 @@ class ChatModel {
   String time;
   String currentMessage;
   String about;
+  bool select = false;
   // String contact;
 
   ChatModel({
@@ -14,6 +15,7 @@ class ChatModel {
     this.time = '',
     this.currentMessage = '',
     this.about = '',
+    this.select = false,
     // this.contact = ''
   });
 }
