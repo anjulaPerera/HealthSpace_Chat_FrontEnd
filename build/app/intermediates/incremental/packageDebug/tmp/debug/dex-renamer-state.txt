@@ -1,0 +1,4 @@
+#Thu Dec 29 11:54:13 IST 2022
+base.0=G\:\\ITUM-NDT IT-Studies\\Sem 4\\Project\\chat 27.12\\Flutter Front-End\\devstack\\chat_dev_stack\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
+renamed.0=classes.dex
+path.0=classes.dex
